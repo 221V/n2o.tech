@@ -1,30 +1,11 @@
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="author" content="Maxim Sokhatsky" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
-    <title>SPEC</title>
-    <link rel="stylesheet" href="https://synrc.space/synrc.css?v=6" />
-</head>
-
-<body>
-
-<nav>
-    <a href='#' style="background:#ededed;">EN</a>
-    <a href='jp/index.html'>JP</a>
-    <a href='cn/index.html'>CN</a>
-</nav>
-
-<header>
-    <a href="https://github.com/synrc/n2o.dev"><img src="https://synrc.space/images/Synrc Neo.svg?v=1"></a>
+<html><head><meta charset="utf-8" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="" /><meta name="author" content="Maxim Sokhatsky" /><link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet" /><title>SPEC</title><link rel="stylesheet" href="https://synrc.space/synrc.css?v=6" /></head><body><nav>
+    <a href="#" style="background:#ededed;">EN</a>
+    <a href="jp/index.html">JP</a>
+    <a href="cn/index.html">CN</a>
+</nav><header>
+    <a href="https://github.com/synrc/n2o.dev"><img src="https://synrc.space/images/Synrc Neo.svg?v=1" /></a>
     <h1>SPEC</h1>
-</header>
-
-<aside>
+</header><aside>
     <article>
         <section>
             <h3>SYNOPSIS</h3>
@@ -35,20 +16,19 @@
                  with minimalistic enterprise protocol stack: web framework,
                  business process management, scalable data storage.
                  As an example, three SPEC implementations presented
-                 here in functional languages: Erlang, Haskell, and Standard ML.<br><br>
+                 here in functional languages: Erlang, Haskell, and Standard ML.<br /><br />
             </div>
-            <div class=logo style="padding:20px;margin-bottom:20px;"><center>
-                <img src="https://n2o.space/Erlang-Mono.svg?v=3" style="width:120px;margin-right:60px;">
-                <img src="https://n2o.space/Haskell-Mono.svg?v=3" style="width:100px;margin-right:60px;">
-                <img src="https://n2o.space/SML-Mono.svg?v=3" style="width:130px;">
+            <div class="logo" style="padding:20px;margin-bottom:20px;"><center>
+                <img src="https://n2o.space/Erlang-Mono.svg?v=3" style="width:120px;margin-right:60px;" />
+                <img src="https://n2o.space/Haskell-Mono.svg?v=3" style="width:100px;margin-right:60px;" />
+                <img src="https://n2o.space/SML-Mono.svg?v=3" style="width:130px;" />
             </center></div>
             <div>
-                2013&mdash;2019 &copy; <a href="https://5ht.co/license.htm">DHARMA LICENSE</a>
+                2013—2019 © <a href="https://5ht.co/license.htm">DHARMA LICENSE</a>
             </div>
         </section>
     </article>
-</aside>
-<main>
+</aside><main>
     <section>
         <h3>WHAT IS SPEC?</h3>
         <p> SPEC is an ecosystem that provides it's own
@@ -97,7 +77,7 @@
      wireEl button{id="send", postback=Just Greet, source=["name"]
  index (Message Greet) = do
      Just name &lt;- get "name"
-     updateText "system" ("Hello, " <> jsEscape name <> "!")
+     updateText "system" ("Hello, " &lt;> jsEscape name &lt;> "!")
  about Init =
      updateText "app" "This is the N2O Hello World App"
         </code></figure>
@@ -129,10 +109,7 @@
          <figure><figcaption>KVX ERLANG:</figcaption><code>
  #reader{id=R} = kvs:save(kvs:reader(Id)),
  [ kvs:save(kvs:add((kvs:load_writer(Id))
-   #writer{args=#emails{}})) || _ <- lists:seq(1,X) ],
-  Bot = kvs:bot(kvs:load_reader(R)),
-  #reader{args=F} = kvs:take(Bot#reader{args=20,dir=0}),
-         </code></figure>
+   #writer{args=#emails{}})) || _ </code></figure>
          <figure><figcaption>BPE ERLANG:</figcaption><code>
  action({request,'Init'}, Proc) ->
     {reply,Proc};
@@ -280,7 +257,7 @@
                       to   = [] :: [] | binary() }).
 
  -record('File',    { id        = [] :: binary(),
-                      mime      = <<"text">> :: binary(),
+                      mime      = &lt;&lt;"text">> :: binary(),
                       payload   = [] :: binary(),
                       parentid  = [] :: binary(),
                       data      = [] :: binary() }).
@@ -355,7 +332,7 @@
         <p>Tier 1 — Implementations in functional languages (Erlang, Haskell, Standard ML).</p>
     </section>
     <section>
-        <a name=intro></a>
+        <a name="intro"></a>
         <h3><a href="https://n2o.space">SYNRC SPEC</a></h3>
         <p> SYNRC SPEC defines ecosystem, a full-stack specification and implementation
             for banking, messaging and platform development. It specifies the way
@@ -367,23 +344,7 @@
             type-driven BERT parser generator for API development,
             scalable data storage (KVX), and many more.
         </p>
-            <ul>
-                <li><a href="https://ws.n2o.space">synrc/n2o</a> &mdash; N2O 5.11.1 MQTT WS</li>
-                <li><a href="https://kvx.n2o.space">synrc/kvx</a> &mdash; KVX 5.11</li>
-                <li><a href="https://mad.n2o.space">synrc/mad</a> &mdash; MAD 4.11</li>
-                <li><a href="https://bpe.n2o.space">synrc/bpe</a> &mdash; BPE 3.11</li>
-                <li><a href="https://forms.n2o.space">synrc/forms</a> &mdash; FORMS 3.11</li>
-                <li><a href="https://synrc.github.io/roster">synrc/roster</a> &mdash; ROSTER 3.11</li>
-                <li><a href="https://synrc.github.io/nitro">synrc/nitro</a> &mdash; NITRO 3.10</li>
-                <li><a href="https://synrc.github.io/rest">synrc/rest</a> &mdash; REST 5.10</li>
-                <li><a href="https://synrc.github.io/active">synrc/active</a> &mdash; ACTIVE 4.11</li>
-                <li><a href="https://synrc.github.io/fs">synrc/fs</a> &mdash; FS 4.10</li>
-                <li><a href="https://synrc.github.io/sh">synrc/sh</a> &mdash; SH 2.11</li>
-                <li><a href="https://synrc.github.io/bert">synrc/bert</a> &mdash; BERT 1.11.1</li>
-                <li><a href="https://review.n2o.space">synrc/review</a> &mdash; REVIEW 1.11 TT</li>
-                <li><a href="https://sample.n2o.space">synrc/sample</a> &mdash; REVIEW 1.11 WS</li>
-                <li><a href="https://xio.n2o.space">synrc/xio</a> &mdash; XIO MQTT 5.0</li>
-            </ul>
+            <ul><li><a href="https://ws.n2o.space">synrc/n2o</a> — N2O 5.11.1 MQTT WS</li><li><a href="https://kvx.n2o.space">synrc/kvx</a> — KVX 5.11</li><li><a href="https://mad.n2o.space">synrc/mad</a> — MAD 4.11</li><li><a href="https://bpe.n2o.space">synrc/bpe</a> — BPE 3.11</li><li><a href="https://forms.n2o.space">synrc/forms</a> — FORMS 3.11</li><li><a href="https://synrc.github.io/roster">synrc/roster</a> — ROSTER 3.11</li><li><a href="https://synrc.github.io/nitro">synrc/nitro</a> — NITRO 3.10</li><li><a href="https://synrc.github.io/rest">synrc/rest</a> — REST 5.10</li><li><a href="https://synrc.github.io/active">synrc/active</a> — ACTIVE 4.11</li><li><a href="https://synrc.github.io/fs">synrc/fs</a> — FS 4.10</li><li><a href="https://synrc.github.io/sh">synrc/sh</a> — SH 2.11</li><li><a href="https://synrc.github.io/bert">synrc/bert</a> — BERT 1.11.1</li><li><a href="https://review.n2o.space">synrc/review</a> — REVIEW 1.11 TT</li><li><a href="https://sample.n2o.space">synrc/sample</a> — REVIEW 1.11 WS</li><li><a href="https://xio.n2o.space">synrc/xio</a> — XIO MQTT 5.0</li></ul>
 
     </section>
     <section>
@@ -392,26 +353,20 @@
             It includes full implementation of Nitrogen Web Framework (NITRO) in
             Haskell along with HTML example (SAMPLE)
             driven by WebSocket and static HTTP servers (N2O).</p>
-        <ul>
-            <li><a href="https://n2o.o3.click">o3/n2o</a> &mdash; N2O 0.11 HS</li>
-            <li><a href="https://nitro.o3.click">o3/nitro</a> &mdash; NITRO 0.11</li>
-            <li><a href="https://sample.o3.click">o3/sample</a> &mdash; SAMPLE 0.11</li>
-        </ul>
+        <ul><li><a href="https://n2o.o3.click">o3/n2o</a> — N2O 0.11 HS</li><li><a href="https://nitro.o3.click">o3/nitro</a> — NITRO 0.11</li><li><a href="https://sample.o3.click">o3/sample</a> — SAMPLE 0.11</li></ul>
     </section>
     <section>
-        <a name=intro></a>
+        <a name="intro"></a>
         <h3><a href="https://o1.network">O1 SPEC</a></h3>
         <p> O1 SPEC is a Standard ML N2O implementation. Standard ML (SML)
             is a certified language with formally defined operational semantics.
             Here is yet simple CML loop with INetSock.TCP spawned acceptors.
             Simple enough to handle N2O protocols inside the TCP server.
-            O1&nbsp;ECO provides basic WebSocket connectivity and basic
+            O1&#160;ECO provides basic WebSocket connectivity and basic
             application server (N2O). The unique feature of SML implementation
             is that O1 SPEC is implemented in verified language.
         </p>
-        <ul>
-            <li><a href="https://n2o.o1.network">o1/n2o</a> &mdash; N2O 0.11 ML</li>
-        </ul>
+        <ul><li><a href="https://n2o.o1.network">o1/n2o</a> — N2O 0.11 ML</li></ul>
     </section>
     <section>
         <p>More tiers could be found at <a href="https://n2o.im">n2o.im</a> page.</p>
@@ -430,17 +385,12 @@
                 If you did everything right, N2O should not
                 be more than 500 LOC in any language.
                 The correct way is to implement WebSocket and
-                static HTTP server using the same codebase.<br><br>
+                static HTTP server using the same codebase.<br /><br />
             </p>
-            <br>
-            <br>
+            <br />
+            <br />
     </section>
 
-</main>
-
-<footer>
+</main><footer>
     Made with <span class="heart">❤</span> to N2O
-</footer>
-
-</body>
-</html>
+</footer></body></html>
