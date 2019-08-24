@@ -96,7 +96,7 @@ main ol{max-width:850px;margin:20px auto}
     <p>本体の行数が少ないのは、各機能を効果的にライブラリに委譲している事にも由来していそうです。
     ところで、気になるのはやはり速度です。
     少し前の情報のようですが、プロジェクトのページに以下のような表が掲載されていました。</p>
-    <figure><figcaption></figcaption><img class="imgw" src="img/jp1.png" style="border:none;"></figure>
+    <figure><figcaption></figcaption><img class="imgw" src="img/jp1.png" style="border:none;"/></figure>
     <p>もう一つ、N2Oのプロジェクトページの比較表から引用しますが、</p>
     <table class="compare">
       <thead>
@@ -426,7 +426,7 @@ $ sudo apt-get install git inotify-tools
     <p>— rebar.config<br/>
        — 利用するライブラリの定義<br/>
        — sys.config<br/>
-       — パラメータの定義<br/>
+       — パラメータの定義</p>
     <p>ファイルの内容を見れば一目瞭然なので、説明は省略します。</p>
   </section>
   <section>
@@ -434,9 +434,9 @@ $ sudo apt-get install git inotify-tools
     <p>ここまでで、サーバのポート8001番で最低限のWebアプリケーション(チャット)が動いていますので、
     ブラウザでアクセスしてみます。
     複数のブラウザで開いてみて、あるブラウザで入力したメッセージが、全てのブラウザに正しく伝わるかも確認してみましょう。</p>
-    <figure><figcaption></figcaption><img class="imgw" src="img/jp2.png" alt=""></figure>
+    <figure><figcaption></figcaption><img class="imgw" src="img/jp2.png"/></figure>
     <p>ブラウザ上で何かメッセージを入力してから、CHATボタンを押すと、サーバにはシリアライズされたデータが送信されてきます。</p>
-    <figure><figcaption></figcaption><img class="imgw" src="img/jp3.png" alt=""></figure>
+    <figure><figcaption></figcaption><img class="imgw" src="img/jp3.png"/></figure>
     <p>単純なメッセージでも、結構複雑な形式のデータとして送られています。</p>
   </section>
   <section>
@@ -457,7 +457,7 @@ $ sudo apt-get install git inotify-tools
        クライアント側にどのようなメッセージが来ているか、ブラウザの開発者ツールで確認してみます。
        Chromeで、F12キーを押して開発者ツールを開き、Network - Framesを選択、WSタブをクリック。
        オレンジ色で、Binary Frameという列がありますから、確かにバイナリでデータが届けられました。</p>
-    <figure><figcaption></figcaption><img class="imgw" src="img/jp4.png" alt=""></figure>
+    <figure><figcaption></figcaption><img class="imgw" src="img/jp4.png"/></figure>
     <p>次に、デバッグプリントを有効にして、コンソール上に詳細情報を出すようにします。
        F12キーを押して開発者ツールを開き、Sourceペーンのn2o/protocols/client.jsをクリックします。
        これはサーバからのメッセージを読み込む処理の一部です。
@@ -492,7 +492,7 @@ $ sudo apt-get install git inotify-tools
       // 追加
       console.log(msg);
       if (debug) console.log(JSON.stringify(msg));
-      if (typeof callback == 'function' && msg) callback(msg);
+      if (typeof callback == 'function' &#38;&#38; msg) callback(msg);
       for (var i=0;i&#60;$bert.protos.length;i++) {
         p = $bert.protos[i];
         if (p.on(msg, p.do).status == "ok") return { status: "ok"};
@@ -542,7 +542,7 @@ $ sudo apt-get install git inotify-tools
        ッセージを送るだけでも、結構複雑なデータ構造を与えないといけません。
        ンの値は、接続時にサーバ側から送られているので、ブラウザの開発者ツールで確認して値を置き換えて下さい。
        ンの値が間違っていると、サーバ側で無視されますので、何も起きません。</p>
-    <figure><figcaption></figcaption><img class="imgw" src="img/jp5.png" alt=""></figure>
+    <figure><figcaption></figcaption><img class="imgw" src="img/jp5.png"/></figure>
     <figure>
       <code>
   // ※トークンの値は上の画像のハイライトの部分を拾って書き換えて下さい
@@ -559,16 +559,13 @@ $ sudo apt-get install git inotify-tools
       </code>
     </figure>
     <p>上手く行くと、以下のように送ったメッセージがそのままサーバから返ってきてブラウザ上に表示されるはずです。</p>
-    <figure><figcaption></figcaption><img class="imgw" src="img/jp6.png" alt=""></figure>
+    <figure><figcaption></figcaption><img class="imgw" src="img/jp6.png"/></figure>
   </section>
   <section>
     <h3>N2Oのアーキテクチャ</h3>
-    <p>
-      <figure><figcaption></figcaption><img style="border:none;"class="imgw" src="img/jp7.png" alt=""></figure>
-    </p>
+    <figure><figcaption></figcaption><img style="border:none;" class="imgw" src="img/jp7.png"/></figure>
   </section>
   <section>
-    <a name="%E3%83%AA%E3%82%A2%E3%83%AB%E3%82%BF%E3%82%A4%E3%83%A0%E3%83%AC%E3%83%BC%E3%83%88%E7%94%BB%E9%9D%A2%E3%81%AE%E4%BD%9C%E6%88%90"></a>
     <h3>リアルタイムレート画面の作成</h3>
     <p>簡単なサンプルチャットアプリを動かして、自動・手動のメッセージ送受信まで出来ました。
        アルタイムレート配信サービスを作成します。
@@ -621,7 +618,7 @@ $ sudo apt-get install git inotify-tools
   </section>
   <section>
     <h3>リアルタイムレートの確認 (ブラウザ)</h3>
-    <figure><figcaption></figcaption><img class="imgw" src="img/jp8.png" alt=""></figure>
+    <figure><figcaption></figcaption><img class="imgw" src="img/jp8.png"/></figure>
   </section>
   <section>
     <h3>画面周りのテンプレート作成</h3>
@@ -641,8 +638,6 @@ $ sudo apt-get install git inotify-tools
        (Pub/Subの実装は<a href="https://github.com/uwiger/gproc">gproc</a>が利用されています)</p>
     <ul class="disc">
       <li>wf:reg  — <a href="https://synrc.com/apps/n2o/doc/web/api.htm" class="autolink">api.htm</a> </li>
-        </ul>
-      </li>
     </ul>
     <figure>
       <code>
@@ -736,7 +731,7 @@ $ sudo apt-get install git inotify-tools
   <section>
     <a name="credits"></a>
     <h3>Credits</h3>
-    <p>Original source — <a href="https://qiita.com/dseg/items/4f2c8b04aec35cc504f0">https://qiita.com/dseg/items/4f2c...</a><br>
+    <p>Original source — <a href="https://qiita.com/dseg/items/4f2c8b04aec35cc504f0">https://qiita.com/dseg/items/4f2c...</a><br/>
        Author — Daichi Shinozaki — <a href="https://qiita.com/dseg">@dseg</a></p>
   </section>
 </article>
