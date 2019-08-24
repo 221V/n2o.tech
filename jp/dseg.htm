@@ -13,7 +13,7 @@
 .compare{overflow:auto;margin:10px auto;border-left:1px solid #ddd;border-collapse: collapse}
 .compare tr:nth-child(2n+1){background-color:#eee}
 .compare th{word-wrap:anywhere;font-weight:700;background-color:#fff;border-top:1px solid #ddd;border-bottom:1px solid #ccc;border-right:1px solid #ccc;padding:8px 10px}
-.compare td{word-wrap:anywhere;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;padding: 8px 10px}
+.compare td{font-size:12px;word-wrap:anywhere;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;padding: 8px 10px}
 
 ul.disc{list-style-type: disc}
 ul.circle{padding-left:1.5em;list-style-type:circle;margin:0}
@@ -541,12 +541,9 @@ $ sudo apt-get install git inotify-tools
   <section>
     <a name="%E3%82%B5%E3%83%BC%E3%83%90%E5%81%B4%E3%81%A7%E7%A2%BA%E8%AA%8D"></a>
     <h3>サーバ側で確認</h3>
-    <p>サーバ側のシェルセッション上にはErlangのREPLが開いており、INFOレベルのログが出力されるので、何が起きているか確認できます。
-    </p>
-    <p>また、ここでENTERキーを押すと、対話型のシェルに入りますので、Erlangのコードを入力可能です。
-    </p>
-    <p>試しにコマンドラインからメッセージを送ってみましょう。
-    </p>
+    <p>サーバ側のシェルセッション上にはErlangのREPLが開いており、INFOレベルのログが出力されるので、何が起きているか確認できます。</p>
+    <p>また、ここでENTERキーを押すと、対話型のシェルに入りますので、Erlangのコードを入力可能です。</p>
+    <p>試しにコマンドラインからメッセージを送ってみましょう。</p>
     <figure>
       <code>
   wf:send(room,{client,{"system","message!!!"}}).
@@ -930,8 +927,8 @@ $ sudo apt-get install git inotify-tools
   <section>
     <a name="credits"></a>
     <h3>Credits</h3>
-    <p>Original article <a href="https://qiita.com/dseg/items/4f2c8b04aec35cc504f0">https://qiita.com/dseg/items/4f2c8b04aec35cc504f0</a>
-      written by <a href="https://qiita.com/dseg">Daichi Shinozaki ( @dseg )</a></p>
+    <p>Original source — <a href="https://qiita.com/dseg/items/4f2c8b04aec35cc504f0">https://qiita.com/dseg/items/4f2c...</a><br>
+       Author — Daichi Shinozaki — <a href="https://qiita.com/dseg">@dseg</a></p>
   </section>
 </article>
 </main>
